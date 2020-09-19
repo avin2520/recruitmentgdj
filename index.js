@@ -13,7 +13,7 @@ app.use(cors())
 
 
 app.get('/',(req,res)=>{
-    res.send('<h1>Selamat datang di API File Upload System</h1>')
+    res.send('<h1>Selamat datang di API Recruitment Gadjian</h1>')
 })
 
 
