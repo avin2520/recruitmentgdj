@@ -1,20 +1,25 @@
    //Function Reverse Character
     const reverse = (character='') => {
+      if(typeof(character)==='string'){
         var char = character
         var revChar = ''
         for(var i= char.length-1 ; i >= 0 ; i--){
             var revChar = revChar + char[i]          
         }
-        console.log(revChar)
+       return revChar
+      }else{
+        return 'type data must be string'
+      }
     }
     
-    reverse('abcde') 
+   console.log(reverse(12345))
 
 
 
 
   // Fibonacci Function
     const fibonacci =(n)=>{
+    if(Number.isInteger(n) === true){
       if (n===1) 
       {
         return [0, 1]
@@ -23,12 +28,15 @@
       {
         let fiboArr = fibonacci(n - 1)
         fiboArr.push(fiboArr[fiboArr.length - 1] + fiboArr[fiboArr.length - 2]);
-        return fiboArr;
+        return fiboArr
       }
+    }else{
+      return " n must be integer"
+    }
 
     }
 
-    console.log(fibonacci(15));
+    console.log(fibonacci(15.5));
 
 
     
