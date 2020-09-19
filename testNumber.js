@@ -27,9 +27,8 @@
     
     fibonacci(15)
 
-    const product_Range = (a,b) => {
-        var prd = a , i = a;
-    
+    const range = (a,b) => {
+        var prd = a, i=a;
         while (i++ < b) {
           prd *= i;
         }
@@ -37,23 +36,32 @@
       }
       
     
-      function combinations(n, r) 
-      {
-        if (n==r) 
-        {
-          return 1;
-        } 
-        else 
-        {
-          r=(r < n-r) ? n-r : r;
-          return product_Range(r+1, n)/product_Range(1,n-r);
-        }
+    const combinations=(n, r)=>{
+      let check1=Number.isInteger(n)
+      let check2=Number.isInteger(r)
+      if(check1 === true && check2 === true){
+          if (n==r) 
+          {
+            return 1;
+          } 
+          else if(n>r) 
+          {
+            r=(r < n-r) ? n-r : r;
+            return range(r+1, n)/range(1,n-r);
+          }
+          else if(n<r){
+            return "n value must greater than r value"
+          }
+      }else{
+          return "n and r must be integer"
       }
+    }
       
       
-      console.log(combinations(173, 2));
-      console.log(combinations(5, 3));
+      console.log(combinations(6, 2));
       console.log(combinations(3, 3));
+      console.log(combinations(3, 5));
+      console.log(combinations(6.5,2));
 
 
       

@@ -7,7 +7,7 @@ const db = require('./3.databases/mySql')
 const employeesRouter = require('./1.Router/employees')
 const reverseRouter = require('./1.Router/reverse')
 // const fibonacciRouter = require('./1.Router/fibonacci')
-// const combinationRouter = require('./1.Router/combination')
+const combinationRouter = require('./1.Router/combination')
 
 db.connect()
 
@@ -18,7 +18,7 @@ app.use(cors())
 app.use('/api/employees',employeesRouter)
 app.use('/api/reverse',reverseRouter)
 // app.use('/api/fibonacci',fibonacciRouter)
-// app.use('/api/combination',combinationRouter)
+app.use('/api/combination',combinationRouter)
 
 app.get('/',(req,res)=>{
     res.send('<h1>Selamat datang di API Recruitment Gadjian</h1>')
