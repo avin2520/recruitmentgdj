@@ -36,7 +36,7 @@
         return prd;
       }
       
-      
+    
       function combinations(n, r) 
       {
         if (n==r) 
@@ -54,3 +54,6 @@
       console.log(combinations(173, 2));
       console.log(combinations(5, 3));
       console.log(combinations(3, 3));
+
+
+      

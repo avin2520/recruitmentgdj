@@ -16,7 +16,7 @@ const reverseFunction = (req,res)=>{
     res.send({
         error:false,
         message : "Status code 200",
-        data : result
+        result : result
     })
 }
 
