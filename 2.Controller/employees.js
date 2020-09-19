@@ -91,9 +91,33 @@ const getDataEmloyeess = (req,res)=>{
     })
 }
 
+const getDataEmployeeById = (req,res)=>{
+    let id = req.params.id    
+    let sql = 'select * from employees where id= ?;'
+
+    db.query(sql,id,(err,result)=>{
+        try{
+            if(err) throw err
+            res.json({
+               error : false,
+               message : 'Status code 200',
+               data : result
+                
+            })
+
+        }catch(err){
+            res.json({
+                error : true,
+                message : err.message
+            })
+        }
+    })
+}
+
 module.exports = {
     InputDataEmployees,
     editDataEmployees,
     deleteEmployeeById,
-    getDataEmloyeess
+    getDataEmloyeess,
+    getDataEmployeeById
 }

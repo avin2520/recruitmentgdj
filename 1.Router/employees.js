@@ -5,6 +5,7 @@ Router.post('/',controller.InputDataEmployees)
 Router.put('/:id',controller.editDataEmployees)
 Router.delete('/:id',controller.deleteEmployeeById)
 Router.get('/',controller.getDataEmloyeess)
+Router.get('/:id',controller.getDataEmployeeById)
 
 
 
