@@ -1,4 +1,4 @@
-   
+   //Function Reverse Character
     const reverse = (character='') => {
         var char = character
         var revChar = ''
@@ -10,23 +10,29 @@
     
     reverse('abcde') 
 
-    const fibonacci = (n) => {
-       var n1 = 0
-       var n2 = 1
-       var fiboArr= []
 
 
-       var hasil = n1 + n2
-       fiboArr.push(hasil)
 
+  // Fibonacci Function
+    const fibonacci =(n)=>{
+      if (n===1) 
+      {
+        return [0, 1]
+      } 
+      else 
+      {
+        let fiboArr = fibonacci(n - 1)
+        fiboArr.push(fiboArr[fiboArr.length - 1] + fiboArr[fiboArr.length - 2]);
+        return fiboArr;
+      }
 
-       n = hasil
-       console.log(n)
-       
     }
-    
-    fibonacci(15)
 
+    console.log(fibonacci(15));
+
+
+    
+  // Math Combination Function
     const range = (a,b) => {
         var prd = a, i=a;
         while (i++ < b) {
