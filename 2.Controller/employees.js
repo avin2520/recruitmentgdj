@@ -49,8 +49,29 @@ const editDataEmployees = (req,res)=>{
     
 }
 
+const deleteEmployeeById = (req,res)=>{
+    let id = req.params.id
+    let sql = 'delete from employees where id =?;'
+    db.query(sql,id,(err,result) => {
+        try{
+            if(err) throw err         
+                    res.json({
+                        error:false,
+                        message : 'Status code 204',                        
+                    })
+        }catch(err){
+            res.json({
+                error:true,
+                message:err.message
+
+            })
+        }
+    })
+}
+
 
 module.exports = {
     InputDataEmployees,
-    editDataEmployees
+    editDataEmployees,
+    deleteEmployeeById
 }
