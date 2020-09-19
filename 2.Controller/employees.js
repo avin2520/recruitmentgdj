@@ -23,6 +23,34 @@ const InputDataEmployees = (req,res)=>{
     })
 }
 
+const editDataEmployees = (req,res)=>{
+    let data = req.body
+    let id = req.params.id
+    let sql = 'update employees set ? where id = ?'
+    db.query(sql,[data,id],(err,result)=>{
+        console.log('enter')
+        try{
+            if(err) throw err           
+            res.json({
+                error:false,
+                message : 'Status code 200',
+                data : data
+                
+            })
+
+        }catch(err){
+            res.json({
+                error:true,
+                message:err.message
+
+            })
+        }
+    })
+    
+}
+
+
 module.exports = {
-    InputDataEmployees
+    InputDataEmployees,
+    editDataEmployees
 }
