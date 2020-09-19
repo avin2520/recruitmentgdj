@@ -9,4 +9,10 @@
     }
     
     reverse('abcde') 
-   
+
+    const fibonacci = (n) => {
+        console.log(n)
+       
+    }
+    
+    fibonacci(0)
